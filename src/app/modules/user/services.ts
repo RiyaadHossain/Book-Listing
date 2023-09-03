@@ -1,22 +1,81 @@
-import { User } from '@prisma/client';
+import { Prisma, User } from '@prisma/client';
 import prisma from '../../../shared/prisma';
+import { IPaginationOptions } from '../../../interfaces/pagination';
+import { IUserFilter } from './interface';
+import { paginationHelpers } from '../../../helpers/paginationHelper';
+import { userFilterableFields, userSearchableFields } from './constant';
+import { IGenericResponse } from '../../../interfaces/common';
 
-const getAllUsers = async () => {
-  const data = await prisma.user.findMany();
-  return data;
+const getAllUsers = async (
+  pagination: IPaginationOptions,
+  userSearchAndFilter: IUserFilter
+): Promise<IGenericResponse<User[]>> => {
+  const { page, limit, skip, sortBy, sortOrder } =
+    paginationHelpers.calculatePagination(pagination);
+
+  const { search, ...filters } = userSearchAndFilter;
+
+  const andCondition = [];
+
+  // Searching
+  if (userSearchableFields.length) {
+    andCondition.push({
+      OR: userSearchableFields.map(field => ({
+        [field]: {
+          contains: search,
+          mode: 'insensitive',
+        },
+      })),
+    });
+  }
+
+  // Filter
+  if (Object.keys(filters).length) {
+    andCondition.push({
+      AND: userFilterableFields.map(field => ({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        [field]: (filters as any)[field]
+      }))
+    })
+  }
+
+  const whereCondition: Prisma.UserWhereInput = andCondition.length
+    ? { AND: andCondition }
+    : {};
+
+  const data = await prisma.user.findMany({
+    where: whereCondition,
+    skip,
+    take: limit,
+    orderBy: { [sortBy]: sortOrder },
+  });
+
+  const total = await prisma.user.count({ where: whereCondition });
+
+  return {
+    meta: {
+      total,
+      page,
+      limit,
+    },
+    data,
+  };
 };
 
-const getUser = async (id: string) => {
+const getUser = async (id: string): Promise<User | null> => {
   const data = await prisma.user.findUnique({ where: { id } });
   return data;
 };
 
-const updateUser = async (id: string, payload: Partial<User>) => {
+const updateUser = async (
+  id: string,
+  payload: Partial<User>
+): Promise<User> => {
   const data = await prisma.user.update({ where: { id }, data: payload });
   return data;
 };
 
-const deleteUser = async (id: string) => {
+const deleteUser = async (id: string): Promise<User> => {
   const data = await prisma.user.delete({ where: { id } });
   return data;
 };

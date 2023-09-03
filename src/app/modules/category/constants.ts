@@ -1,3 +1,3 @@
-export const categorySearchAndFilter = ['search', 'title'];
+export const categorySearchAndFilter = ['search'];
 
 export const categorySearchableFields = ['title'];
