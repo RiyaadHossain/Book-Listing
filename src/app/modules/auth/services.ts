@@ -25,7 +25,7 @@ const signin = async (signInData: IAuth) => {
     throw new ApiError(httpStatus.BAD_REQUEST, "User doesn't exist!");
   }
 
-  const { email, role, password } = userExist;
+  const { id, role, password } = userExist;
 
   // Check Password
   if (signInData.password !== password) {
@@ -34,7 +34,7 @@ const signin = async (signInData: IAuth) => {
 
   // Generate Token
   const token = jwtHelpers.createToken(
-    { email, role },
+    { id, role },
     process.env.JWT_SECRET as string,
     process.env.JWT_SECRET_EXPIRE as string
   );
