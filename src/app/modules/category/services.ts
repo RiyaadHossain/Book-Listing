@@ -25,7 +25,7 @@ const getAllCategories = async (
   const andCondition = [];
 
   // Searching
-  if (categorySearchableFields.length) {
+  if (search) {
     andCondition.push({
       OR: categorySearchableFields.map(field => ({
         [field]: {

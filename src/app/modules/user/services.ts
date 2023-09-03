@@ -3,7 +3,7 @@ import prisma from '../../../shared/prisma';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import { IUserFilter } from './interface';
 import { paginationHelpers } from '../../../helpers/paginationHelper';
-import { userFilterableFields, userSearchableFields } from './constant';
+import { userSearchableFields } from './constant';
 import { IGenericResponse } from '../../../interfaces/common';
 
 const getAllUsers = async (
@@ -18,7 +18,7 @@ const getAllUsers = async (
   const andCondition = [];
 
   // Searching
-  if (userSearchableFields.length) {
+  if (search) {
     andCondition.push({
       OR: userSearchableFields.map(field => ({
         [field]: {
@@ -32,7 +32,7 @@ const getAllUsers = async (
   // Filter
   if (Object.keys(filters).length) {
     andCondition.push({
-      AND: userFilterableFields.map(field => ({
+      AND: Object.keys(filters).map(field => ({
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         [field]: (filters as any)[field]
       }))
