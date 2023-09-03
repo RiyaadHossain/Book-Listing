@@ -1,0 +1,20 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "E:\\Programming Hero\\Web Dev 2.0\\5. PostgreSQL and Prisma\\Assignment\\BookListingApplication_Assignment\\logs\\winston\\successes\\.880e6aea2d30a373aee079028c0d7925c3da5d7a-audit.json",
+    "files": [
+        {
+            "date": 1693704342600,
+            "name": "E:\\Programming Hero\\Web Dev 2.0\\5. PostgreSQL and Prisma\\Assignment\\BookListingApplication_Assignment\\logs\\winston\\successes\\phu-2023-03-09-07-success.log",
+            "hash": "3ca14a8bd74632fb67521557291d2e4bc44b1ef6f477b78afe059ea10fc9199a"
+        },
+        {
+            "date": 1693706450951,
+            "name": "E:\\Programming Hero\\Web Dev 2.0\\5. PostgreSQL and Prisma\\Assignment\\BookListingApplication_Assignment\\logs\\winston\\successes\\phu-2023-03-09-08-success.log",
+            "hash": "58f13062bcc60a99795a1dcf21a1040d6461feea12b7523e5538f6c7abe3fd8c"
+        }
+    ],
+    "hashType": "sha256"
+}
