@@ -10,11 +10,11 @@ import httpStatus from 'http-status';
 import { JwtPayload } from 'jsonwebtoken';
 
 const createOrder = async (
-  userEmail: string,
+  userId: string,
   payload: IOrderReqData
 ): Promise<Order | null> => {
   const user = await prisma.user.findUnique({
-    where: { email: userEmail },
+    where: { id: userId },
   });
 
   if (!user) {
@@ -97,7 +97,7 @@ const getAllOrders = async (
     : {};
 
   if (user?.role === UserRole.CUSTOMER) {
-    whereCondition.user = { id: user.id };
+    whereCondition.user = { id: user.userId };
   }
 
   const data = await prisma.order.findMany({
@@ -134,7 +134,8 @@ const getOrder = async (
   const whereCondition: WhereConditionType = { id };
 
   if (user?.role === UserRole.CUSTOMER) {
-    whereCondition.user = { id: user.id };
+    console.log(user)
+    whereCondition.user = { id: user.userId };
   }
 
   const data = await prisma.order.findUnique({

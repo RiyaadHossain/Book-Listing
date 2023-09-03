@@ -7,7 +7,7 @@ import { CategoryValidators } from './validation';
 const router = express.Router();
 
 router.post(
-  '/',
+  '/create-category',
   auth(UserRole.ADMIN),
   validateRequest(CategoryValidators.createCategoryZodSchema),
   CategoryControllers.createCategory

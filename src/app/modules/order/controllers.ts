@@ -9,9 +9,9 @@ import { orderFilter } from './constant';
 import { Order } from '@prisma/client';
 
 const createOrder: RequestHandler = catchAsync(async (req, res) => {
-  const userEmail = req.user?.email
+  const userId = req.user?.userId
   const orderData = req.body
-  const result = await OrderServices.createOrder(userEmail, orderData);
+  const result = await OrderServices.createOrder(userId, orderData);
 
   sendResponse<Order>(res, {
     statusCode: httpStatus.OK,
@@ -37,7 +37,7 @@ const getAllOrders: RequestHandler = catchAsync(async (req, res) => {
 });
 
 const getOrder: RequestHandler = catchAsync(async (req, res) => {
-  const id = req.params.id;
+  const id = req.params.orderId;
   const user = req.user
   const result = await OrderServices.getOrder(id, user);
 

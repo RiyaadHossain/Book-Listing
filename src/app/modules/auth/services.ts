@@ -34,7 +34,7 @@ const signin = async (signInData: IAuth) => {
 
   // Generate Token
   const token = jwtHelpers.createToken(
-    { id, role },
+    { userId: id, role },
     process.env.JWT_SECRET as string,
     process.env.JWT_SECRET_EXPIRE as string
   );

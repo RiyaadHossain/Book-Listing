@@ -15,6 +15,6 @@ router.post(
 
 router.get('/', auth(UserRole.ADMIN, UserRole.CUSTOMER), OrderControllers.getAllOrders); 
 
-router.get('/:id', auth(UserRole.ADMIN), OrderControllers.getOrder);
+router.get('/:orderId', auth(UserRole.ADMIN, UserRole.CUSTOMER), OrderControllers.getOrder);
 
 export const OrderRoutes = router;

@@ -44,6 +44,11 @@
             "date": 1693732557925,
             "name": "E:\\Programming Hero\\Web Dev 2.0\\5. PostgreSQL and Prisma\\Assignment\\BookListingApplication_Assignment\\logs\\winston\\errors\\phu-2023-03-09-15-error.log",
             "hash": "7546564e0f11ee36f0a38cd4a9b927f28e437e9fa8394aed3f80c46f64da5828"
+        },
+        {
+            "date": 1693735295533,
+            "name": "E:\\Programming Hero\\Web Dev 2.0\\5. PostgreSQL and Prisma\\Assignment\\BookListingApplication_Assignment\\logs\\winston\\errors\\phu-2023-03-09-16-error.log",
+            "hash": "bdfaa961e77da6a8c2e45a655230f72cc893ce12fd4a59639528af0f2d01bd81"
         }
     ],
     "hashType": "sha256"
