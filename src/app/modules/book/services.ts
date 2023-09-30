@@ -13,6 +13,9 @@ import { IGenericResponse } from '../../../interfaces/common';
 const createBook = async (payload: Book): Promise<Book> => {
   const data = await prisma.book.create({
     data: payload,
+    include: {
+      category: true,
+    },
   });
 
   return data;

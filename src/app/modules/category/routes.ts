@@ -8,22 +8,22 @@ const router = express.Router();
 
 router.post(
   '/create-category',
-  auth(UserRole.ADMIN),
+  auth(UserRole.admin),
   validateRequest(CategoryValidators.createCategoryZodSchema),
   CategoryControllers.createCategory
 );
 
-router.get('/', auth(UserRole.ADMIN), CategoryControllers.getAllCategories);
+router.get('/', CategoryControllers.getAllCategories);
 
-router.get('/:id', auth(UserRole.ADMIN), CategoryControllers.getCategory);
+router.get('/:id', CategoryControllers.getCategory);
 
 router.patch(
   '/:id',
-  auth(UserRole.ADMIN),
+  auth(UserRole.admin),
   validateRequest(CategoryValidators.updateCategoryZodSchema),
   CategoryControllers.updateCategory
 );
 
-router.delete('/:id', auth(UserRole.ADMIN), CategoryControllers.deleteCategory);
+router.delete('/:id', auth(UserRole.admin), CategoryControllers.deleteCategory);
 
 export const CategoryRoutes = router;

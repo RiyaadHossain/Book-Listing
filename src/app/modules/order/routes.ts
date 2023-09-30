@@ -8,13 +8,13 @@ const router = express.Router();
 
 router.post(
   '/create-order',
-  auth(UserRole.CUSTOMER),
+  auth(UserRole.customer),
   validateRequest(OrderValidators.createOrderZodSchema),
   OrderControllers.createOrder
 );
 
-router.get('/', auth(UserRole.ADMIN, UserRole.CUSTOMER), OrderControllers.getAllOrders); 
+router.get('/', auth(UserRole.admin, UserRole.customer), OrderControllers.getAllOrders); 
 
-router.get('/:orderId', auth(UserRole.ADMIN, UserRole.CUSTOMER), OrderControllers.getOrder);
+router.get('/:orderId', auth(UserRole.admin, UserRole.customer), OrderControllers.getOrder);
 
 export const OrderRoutes = router;

@@ -30,6 +30,9 @@ const constant_1 = require("./constant");
 const createBook = (payload) => __awaiter(void 0, void 0, void 0, function* () {
     const data = yield prisma_1.default.book.create({
         data: payload,
+        include: {
+            category: true,
+        },
     });
     return data;
 });

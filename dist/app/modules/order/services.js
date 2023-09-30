@@ -86,7 +86,7 @@ const getAllOrders = (pagination, orderFilter, user) => __awaiter(void 0, void 0
     const whereCondition = andCondition.length
         ? { AND: andCondition }
         : {};
-    if ((user === null || user === void 0 ? void 0 : user.role) === client_1.UserRole.CUSTOMER) {
+    if ((user === null || user === void 0 ? void 0 : user.role) === client_1.UserRole.customer) {
         whereCondition.user = { id: user.userId };
     }
     const data = yield prisma_1.default.order.findMany({
@@ -115,7 +115,7 @@ const getAllOrders = (pagination, orderFilter, user) => __awaiter(void 0, void 0
 });
 const getOrder = (id, user) => __awaiter(void 0, void 0, void 0, function* () {
     const whereCondition = { id };
-    if ((user === null || user === void 0 ? void 0 : user.role) === client_1.UserRole.CUSTOMER) {
+    if ((user === null || user === void 0 ? void 0 : user.role) === client_1.UserRole.customer) {
         console.log(user);
         whereCondition.user = { id: user.userId };
     }

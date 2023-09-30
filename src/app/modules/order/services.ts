@@ -96,7 +96,7 @@ const getAllOrders = async (
     ? { AND: andCondition }
     : {};
 
-  if (user?.role === UserRole.CUSTOMER) {
+  if (user?.role === UserRole.customer) {
     whereCondition.user = { id: user.userId };
   }
 
@@ -133,7 +133,7 @@ const getOrder = async (
 ): Promise<Order | null> => {
   const whereCondition: WhereConditionType = { id };
 
-  if (user?.role === UserRole.CUSTOMER) {
+  if (user?.role === UserRole.customer) {
     console.log(user)
     whereCondition.user = { id: user.userId };
   }

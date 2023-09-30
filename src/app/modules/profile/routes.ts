@@ -6,6 +6,6 @@ const router = express.Router();
 
 
 
-router.get('/', auth(UserRole.ADMIN, UserRole.CUSTOMER), ProfileControllers.getUserProfile); 
+router.get('/', auth(UserRole.admin, UserRole.customer), ProfileControllers.getUserProfile); 
 
 export const ProfileRoutes = router;

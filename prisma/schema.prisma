@@ -12,7 +12,7 @@ model User {
   name       String
   email      String   @unique
   password   String
-  role       UserRole @default(CUSTOMER)
+  role       UserRole @default(customer)
   contactNo  String
   address    String
   profileImg String
@@ -26,8 +26,8 @@ model User {
 }
 
 enum UserRole {
-  ADMIN
-  CUSTOMER
+  admin
+  customer
 }
 
 model Category {
@@ -48,7 +48,7 @@ model Book {
   price           Float
   genre           String
   publicationDate String
-  
+
   categoryId String
   category   Category @relation(fields: [categoryId], references: [id])
 
@@ -79,7 +79,7 @@ model ReviewAndRating {
 
 model Order {
   id     String      @id @default(uuid())
-  status OrderStatus @default(PENDING)
+  status OrderStatus @default(pending)
 
   userId String
   user   User   @relation(fields: [userId], references: [id])
@@ -107,7 +107,7 @@ model OrderedBook {
 }
 
 enum OrderStatus {
-  PENDING
-  SHIPPED
-  DELIVERED
+  pending
+  shipped
+  delivered
 }

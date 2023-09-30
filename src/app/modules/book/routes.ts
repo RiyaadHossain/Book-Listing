@@ -8,19 +8,19 @@ const router = express.Router();
 
 router.post(
   '/create-book',
-  auth(UserRole.ADMIN),
+  auth(UserRole.admin),
   validateRequest(BookValidators.createBookZodSchema),
   BookControllers.createBook
 );
 
-router.get('/', auth(UserRole.ADMIN), BookControllers.getAllBooks); 
+router.get('/', BookControllers.getAllBooks); 
 
-router.get('/:categoryId/category', auth(UserRole.ADMIN), BookControllers.getBooksByCategoryId);
+router.get('/:categoryId/category', BookControllers.getBooksByCategoryId);
 
-router.get('/:id', auth(UserRole.ADMIN), BookControllers.getBook);
+router.get('/:id', BookControllers.getBook);
 
-router.patch('/:id', auth(UserRole.ADMIN), BookControllers.updateBook);
+router.patch('/:id', auth(UserRole.admin), BookControllers.updateBook);
 
-router.delete('/:id', auth(UserRole.ADMIN), BookControllers.deleteBook);
+router.delete('/:id', auth(UserRole.admin), BookControllers.deleteBook);
 
 export const BookRoutes = router;

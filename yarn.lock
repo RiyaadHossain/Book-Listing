@@ -139,10 +139,10 @@
   "resolved" "https://registry.npmjs.org/@prisma/engines-version/-/engines-version-5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f.tgz"
   "version" "5.2.0-25.2804dc98259d2ea960602aca6b8e7fdc03c1758f"
 
-"@prisma/engines@5.2.0":
-  "integrity" "sha512-dT7FOLUCdZmq+AunLqB1Iz+ZH/IIS1Fz2THmKZQ6aFONrQD/BQ5ecJ7g2wGS2OgyUFf4OaLam6/bxmgdOBDqig=="
-  "resolved" "https://registry.npmjs.org/@prisma/engines/-/engines-5.2.0.tgz"
-  "version" "5.2.0"
+"@prisma/engines@5.3.1":
+  "integrity" "sha512-6QkILNyfeeN67BNEPEtkgh3Xo2tm6D7V+UhrkBbRHqKw9CTaz/vvTP/ROwYSP/3JT2MtIutZm/EnhxUiuOPVDA=="
+  "resolved" "https://registry.npmjs.org/@prisma/engines/-/engines-5.3.1.tgz"
+  "version" "5.3.1"
 
 "@tsconfig/node10@^1.0.7":
   "integrity" "sha512-jNsYVVxU8v5g43Erja32laIDHXeoNvFEpX33OK4d6hljo3jDhCBDhx5dhCCTMWUojscpAagGiRkBKxpdl9fxqA=="
@@ -1952,12 +1952,12 @@
   "resolved" "https://registry.npmjs.org/prettier/-/prettier-2.8.8.tgz"
   "version" "2.8.8"
 
-"prisma@*", "prisma@^5.2.0":
-  "integrity" "sha512-FfFlpjVCkZwrqxDnP4smlNYSH1so+CbfjgdpioFzGGqlQAEm6VHAYSzV7jJgC3ebtY9dNOhDMS2+4/1DDSM7bQ=="
-  "resolved" "https://registry.npmjs.org/prisma/-/prisma-5.2.0.tgz"
-  "version" "5.2.0"
+"prisma@*", "prisma@^5.3.1":
+  "integrity" "sha512-Wp2msQIlMPHe+5k5Od6xnsI/WNG7UJGgFUJgqv/ygc7kOECZapcSz/iU4NIEzISs3H1W9sFLjAPbg/gOqqtB7A=="
+  "resolved" "https://registry.npmjs.org/prisma/-/prisma-5.3.1.tgz"
+  "version" "5.3.1"
   dependencies:
-    "@prisma/engines" "5.2.0"
+    "@prisma/engines" "5.3.1"
 
 "progress@^2.0.0":
   "integrity" "sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA=="
