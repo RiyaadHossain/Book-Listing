@@ -1,5 +1,6 @@
-# Book Listing
-### Live Link: https://book-listing.vercel.app/
+# Book Listing 📚
+
+### Live Link: https://book-listing-lh1p8xxuu-riyaadhossain.vercel.app/
 
 ### Application Routes:
 
@@ -8,18 +9,18 @@
 - api/v1/auth/signup (POST)
 - api/v1/auth/signin (POST)
 - api/v1/users (GET)
-- api/v1/users/712ea23a-2c99-4736-bab8-7f13859b373e (Single GET) Include an id that is saved in your database
-- api/v1/users/712ea23a-2c99-4736-bab8-7f13859b373e (PATCH)
-- api/v1/users/712ea23a-2c99-4736-bab8-7f13859b373e (DELETE) Include an id that is saved in your database
+- api/v1/users/d57ac032-f2e4-4a96-a21e-5e54b349fa64 (Single GET) Include an id that is saved in your database
+- api/v1/users/d57ac032-f2e4-4a96-a21e-5e54b349fa64 (PATCH)
+- api/v1/users/d57ac032-f2e4-4a96-a21e-5e54b349fa64 (DELETE) Include an id that is saved in your database
 - api/v1/profile (GET)
 
 #### Category
 
 - api/v1/categories/create-category (POST)
 - api/v1/categories (GET)
-- api/v1/categories/c9f75ba9-4444-495a-8539-def6055b8ad4 (Single GET) Include an id that is saved in your database
-- api/v1/categories/c9f75ba9-4444-495a-8539-def6055b8ad4 (PATCH)
-- api/v1/categories/c9f75ba9-4444-495a-8539-def6055b8ad4 (DELETE) Include an id that is saved in your database
+- api/v1/categories/1582b5a6-93ed-4e90-beaa-5966e760e774 (Single GET) Include an id that is saved in your database
+- api/v1/categories/1582b5a6-93ed-4e90-beaa-5966e760e774 (PATCH)
+- api/v1/categories/1582b5a6-93ed-4e90-beaa-5966e760e774 (DELETE) Include an id that is saved in your database
 
 #### Books
 
